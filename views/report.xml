@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            id="onyx_account_payment1"
+            string="Cheque G&amp;T"
+            model="account.payment"
+            report_type="qweb-pdf"
+            file="onyx.reporte_account_payment1"
+            name="onyx.reporte_account_payment1"
+        />
+
+    </data>
+</odoo>
