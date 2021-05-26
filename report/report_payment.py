@@ -16,7 +16,6 @@ class ReportAbstractPayment(models.AbstractModel):
             'docs': docs,
             'data': data,
             'a_letras': a_letras.num_a_letras,
-            'totales': self.totales,
         }
 
 class ReportPayment1(models.AbstractModel):
