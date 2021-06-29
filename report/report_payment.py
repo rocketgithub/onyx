@@ -15,6 +15,13 @@ class ReportAbstractPayment(models.AbstractModel):
         fecha_letras = dia + " de " + mes_letras.capitalize() + " del " + anio
         return fecha_letras
 
+    def totales(self, o):
+        t = {'debito': 0, 'credito': 0}
+        for l in o.move_id.line_ids:
+            t['debito'] += l.debit
+            t['credito'] += l.credit
+        return t
+
     def _get_report_values(self, docids, data=None):
         model = 'account.payment'
         docs = self.env['account.payment'].browse(docids)
@@ -26,6 +33,7 @@ class ReportAbstractPayment(models.AbstractModel):
             'data': data,
             'a_letras': a_letras.num_a_letras,
             'fecha_a_letras': self.fecha_a_letras,
+            'totales': self.totales,
         }
 
 class ReportPayment1(models.AbstractModel):
