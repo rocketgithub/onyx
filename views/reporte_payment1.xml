@@ -64,7 +64,7 @@
                           <table>
                               <tbody>
                                   <tr>
-                                      <td style="width: 14.7cm">
+                                      <td style="width: 13.7cm">
                                       </td>
                                       <td style="width: 2.9cm" class="text-right">
                                           <span t-esc="totales(o)['debito']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
